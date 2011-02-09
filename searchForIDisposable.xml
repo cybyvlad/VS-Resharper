@@ -1,0 +1,24 @@
+<CustomPatterns>
+ <Pattern Severity="WARNING">
+  <Comment>This class implements IDisposable interface.</Comment> 
+  <ReplaceComment>Please use Using statement, or dispose the object manually when done using.</ReplaceComment> 
+  <SearchPattern>$type$</SearchPattern> 
+  <Params /> 
+ <Placeholders>
+  <IdentifierPlaceholder Name="var" Type="" ExactType="False" RegEx="" CaseSensitive="True" /> 
+  <TypePlaceholder Name="type" Type="System.IDisposable" ExactType="False" /> 
+  <ArgumentPlaceholder Name="args" Minimal="-1" Maximal="-1" /> 
+  </Placeholders>
+  </Pattern>
+ <Pattern Severity="WARNING">
+  <Comment>This class implements IDisposable interface.</Comment> 
+  <ReplaceComment>Please use Using statement, or dispose the object manually when done using.</ReplaceComment> 
+  <SearchPattern>new $type$($args$)</SearchPattern> 
+  <Params /> 
+ <Placeholders>
+  <IdentifierPlaceholder Name="var" Type="" ExactType="False" RegEx="" CaseSensitive="True" /> 
+  <TypePlaceholder Name="type" Type="System.IDisposable" ExactType="False" /> 
+  <ArgumentPlaceholder Name="args" Minimal="-1" Maximal="-1" /> 
+  </Placeholders>
+  </Pattern>
+</CustomPatterns>

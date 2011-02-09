@@ -1,0 +1,29 @@
+<TemplatesExport family="Live Templates">
+  <Template uid="c82cccb4-98e2-43d3-b472-5117a70beccc" shortcut="test" description="Test" text="[Test]&#xD;&#xA;public void $MethodUnderTest$_$TestedBehavior$_$ExpectedResult$()&#xD;&#xA;{&#xD;&#xA;	$END$&#xD;&#xA;}" reformat="True" shortenQualifiedReferences="True">
+    <Context>
+      <CSharpContext context="Everywhere" minimumLanguageVersion="2.0" />
+    </Context>
+    <Categories />
+    <Variables>
+      <Variable name="MethodUnderTest" expression="" initialRange="0" />
+      <Variable name="TestedBehavior" expression="" initialRange="0" />
+      <Variable name="ExpectedResult" expression="" initialRange="0" />
+    </Variables>
+    <CustomProperties />
+  </Template>
+  <Template uid="1c3ae94e-fccc-4ed2-8a73-6775f3411fa6" shortcut="cslaprop" description="cslaprop" text="private static PropertyInfo&lt;$TYPE$&gt; $CSLAPROPERTYNAME$ = RegisterProperty(new PropertyInfo&lt;$TYPE$&gt;(&quot;$PROPERTYNAME$&quot;));&#xD;&#xA;private $TYPE$ $FieldName$;&#xD;&#xA;public $TYPE$ $PROPERTYNAME$&#xD;&#xA;{&#xD;&#xA;      get&#xD;&#xA;      {&#xD;&#xA;          return GetProperty($CSLAPROPERTYNAME$,$FieldName$);&#xD;&#xA;      }&#xD;&#xA;      set&#xD;&#xA;      {&#xD;&#xA;           SetProperty($CSLAPROPERTYNAME$, ref $FieldName$, value);&#xD;&#xA;      }&#xD;&#xA;}" reformat="True" shortenQualifiedReferences="True">
+    <Categories />
+    <Variables>
+      <Variable name="TYPE" expression="suggestVariableType()" initialRange="0" />
+      <Variable name="CSLAPROPERTYNAME" expression="" initialRange="0" />
+      <Variable name="PROPERTYNAME" expression="suggestVariableName()" initialRange="0" />
+      <Variable name="FieldName" expression="suggestVariableName()" initialRange="0" />
+    </Variables>
+    <CustomProperties />
+  </Template>
+  <Template uid="7da3745b-867f-4df5-b347-24cdfe7cae5c" shortcut="log" description="Creates a log4net logger" text="private static readonly ILog _logger = LogManager.GetLogger(MethodBase.GetCurrentMethod().DeclaringType);" reformat="True" shortenQualifiedReferences="True">
+    <Categories />
+    <Variables />
+    <CustomProperties />
+  </Template>
+</TemplatesExport>

@@ -1,0 +1,14 @@
+<TemplatesExport family="File Templates">
+  <Template uid="242a52c3-245a-4d5b-a570-2d062965151f" shortcut="" description="UnitTest" text="#region using directive&#xD;&#xA;using NUnit.Framework;&#xD;&#xA;#endregion&#xD;&#xA;namespace $NAMESPACE$&#xD;&#xA;{&#xD;&#xA;    [TestFixture]&#xD;&#xA;    public class $ClassUnderTest$&#xD;&#xA;    {&#xD;&#xA;		$END$&#xD;&#xA;    }&#xD;&#xA;}" reformat="True" shortenQualifiedReferences="True">
+    <Categories />
+    <Variables>
+      <Variable name="NAMESPACE" expression="fileDefaultNamespace()" initialRange="-1" />
+      <Variable name="ClassUnderTest" expression="getFileNameWithoutExtension()" initialRange="0" />
+    </Variables>
+    <CustomProperties>
+      <Property key="FileName" value="UnitTest" />
+      <Property key="Extension" value="cs" />
+      <Property key="ValidateFileName" value="False" />
+    </CustomProperties>
+  </Template>
+</TemplatesExport>
