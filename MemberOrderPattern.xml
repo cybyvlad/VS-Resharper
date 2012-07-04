@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patterns xmlns="urn:shemas-jetbrains-com:member-reordering-patterns">
+
+<Pattern RemoveAllRegions="true"> 
+     <Entry /> 
+</Pattern> 
+
+<Pattern>
+    <Match>
+      <Or Weight="100">
+        <And>
+          <Kind Is="interface"/>
+          <Or>
+            <HasAttribute CLRName="System.Runtime.InteropServices.InterfaceTypeAttribute"/>
+            <HasAttribute CLRName="System.Runtime.InteropServices.ComImport"/>
+          </Or>
+        </And>
+        <HasAttribute CLRName="System.Runtime.InteropServices.StructLayoutAttribute"/>
+      </Or>
+    </Match>
+  </Pattern>
+
+<!--Default pattern-->
+  <Pattern RemoveAllRegions="true">
+    <!--public delegate-->
+    <Entry>
+      <Match>
+        <And Weight="100">
+          <Access Is="public"/>
+          <Kind Is="delegate"/>
+        </And>
+      </Match>
+      <Sort>
+        <Name/>
+      </Sort>
+      <Group />
+    </Entry>
+
+  <!--interface implementations-->
+    <Entry>
+      <Match>
+        <And Weight="100">
+          <Kind Is="member"/>
+          <ImplementsInterface/>
+        </And>
+      </Match>
+      <Sort>
+        <ImplementsInterface Immediate="true"/>
+      </Sort>
+      <Group>
+      </Group>
+    </Entry>
+
+<!--all other members-->
+    <Entry/>
+    
+<!--nested types-->
+    <Entry>
+      <Match>
+        <Kind Is="type"/>
+      </Match>
+      <Sort>
+        <Name/>
+      </Sort>
+    </Entry>
+
+
+<!--instance fields-->
+    <Entry>
+      <Match>
+        <And>
+          <Kind Is="field"/>
+          <Not>
+            <Static/>
+          </Not>
+        </And>
+      </Match>
+      <Sort>
+        <Readonly/>
+        <Name/>
+      </Sort>
+    </Entry>
+
+<!--Constructors. Place static one first-->
+    <Entry>
+      <Match>
+        <Kind Is="constructor"/>
+      </Match>
+      <Sort>
+        <Static/>
+      </Sort>
+    </Entry>
+    
+    <!--properties, indexers-->
+    <Entry>
+      <Match>
+        <Or>
+          <Kind Is="property"/>
+          <Kind Is="indexer"/>
+        </Or>
+      </Match>
+    </Entry>
+
+<!--static fields and constants-->
+    <Entry>
+      <Match>
+        <Or>
+          <Kind Is="constant"/>
+          <And>
+            <Kind Is="field"/>
+            <Static/>
+          </And>
+        </Or>
+      </Match>
+      <Sort>
+        <Kind Order="constant field"/>
+      </Sort>
+    </Entry>
+
+</Pattern>
+</Patterns>
